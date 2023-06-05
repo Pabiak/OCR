@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/tesseract.js@v2.0.0-beta.1/dist/tesseract.min.js"></script>
+        <title>OCR</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="box--input">
+                <h1>Aplikacja OCR</h1>
+                <div class="options">
+                  <div class="step">
+                    <span>1. Wczytaj zdjęcie</span>
+                    <label class="fileUpload">
+                        <input
+                            type="file"
+                            accept="image/*"
+                            id="chooseFile"
+                            name="chooseFile"
+                        />
+                        Wczytaj zdjęcie
+                    </label>
+                  </div>
+                  <div class="step">
+                    <span>2. Wybierz język</span>
+                    <select class="languageSelect">
+                        <option value="eng">Angielski</option>
+                        <option value="pol">Polski</option>
+                    </select>
+                  </div>
+                  <div class="step">
+                    <span>3. Przetwórz obraz</span>
+                    <button class="processButton">Przetwórz obraz</button>
+                  </div>
+                </div>
+                <img class="imgPreview" />
+            </div>
+            <div class="box--output">
+                <span class="resultText"></span>
+            </div>
+        </div>
+        <script src="renderImage.js" defer></script>
+        <script src="ocr.js" defer></script>
+    </body>
+</html>
